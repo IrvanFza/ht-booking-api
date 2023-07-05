@@ -1,7 +1,7 @@
 require "test_helper"
 
 module PayloadParser
-  class GuestDataTest < ActiveSupport::TestCase
+  class GuestDataTest < ActionDispatch::IntegrationTest
     def setup
       payload_one = File.read(Rails.root.join('test', 'fixtures', 'files', 'payload_one.json'))
       @payload_one = JSON.parse(payload_one).with_indifferent_access
@@ -13,6 +13,7 @@ module PayloadParser
     test 'runs successfully for payload one' do
       data = PayloadParser::GuestData.run(payload: @payload_one)
 
+      assert data.valid?
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/email/) }, "No Key contains 'email'"
     end
@@ -20,6 +21,7 @@ module PayloadParser
     test 'runs successfully for payload two' do
       data = PayloadParser::GuestData.run(payload: @payload_two)
 
+      assert data.valid?
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/email/) }, "No Key contains 'email'"
     end
