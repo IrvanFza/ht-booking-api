@@ -1,31 +1,31 @@
 # frozen_literal_string: true
 
-module PayloadParser
+module PayloadExtractor
   # I use ActiveInteraction for easier service testing and validation
   # Read more: https://github.com/AaronLasseigne/active_interaction
-  class ExtractAttributes < ActiveInteraction::Base
-    array :mapping
+  class ExtractPayload < ActiveInteraction::Base
+    array :attributes
     hash :payload, strip: false
 
-    validates :mapping, :payload, presence: true
+    validates :attributes, :payload, presence: true
 
     def execute
-      extract_attributes(payload, mapping)
+      extract_attributes(payload, attributes)
     end
 
     private
 
-    # Extract the payload and return only the attributes that are defined in the mapping
+    # Extract the payload and return only the attributes that are defined in the attributes
     # @param [Hash] data
-    # @param [Array] mapping
-    def extract_attributes(data, mapping)
+    # @param [Array] attributes
+    def extract_attributes(data, attributes)
       result = {}
       data.each do |key, value|
         key = key.to_s.downcase
-        attr_name = mapping.find { |map| key.include?(map) }
+        attr_name = attributes.find { |map| key.include?(map) }
         if value.is_a?(Hash)
           # Recursively parse nested attributes and merge them into the result
-          result.merge!(extract_attributes(value, mapping))
+          result.merge!(extract_attributes(value, attributes))
         else
           result[key] = value if attr_name
         end
