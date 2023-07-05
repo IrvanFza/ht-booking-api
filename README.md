@@ -46,11 +46,6 @@ The system comes with a suite of tests that ensure code quality and application'
 rails test
 ```
 
-## Deployment
-This project is already configured to be automatically deployed to Heroku using GitHub Actions.
-
-The deployment process will be triggered when you push your code to the `main` branch and all test cases are passed.
-
 ## API Authentication
 The API uses a simple authentication mechanism to ensure that only authorized users can access the API. The API expects a `API-Key` header to be present in the request.
 
