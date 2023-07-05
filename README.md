@@ -3,9 +3,9 @@ This project is a simple Ruby on Rails application that demonstrates a scalable 
 
 For simplicity purpose when setting and running the project, this project uses all default configurations including SQLite as the database and minitest as the testing framework.
 
-To foster a culture of 'continuous integration' and 'automated testing', we have setup GitHub Actions to automatically run tests whenever a push or pull request is made.
+To foster a culture of 'continuous integration' and 'automated testing', I have setup GitHub Actions to automatically run tests whenever a push or pull request is made.
 
-## Table of contents
+## Table of Contents
 1. [Getting Started](#getting-started)
 2. [Running the Tests](#running-the-tests)
 3. [Automated Tests with GitHub Actions](#automated-tests-with-github-actions)
