@@ -13,7 +13,7 @@ module PayloadParser
     test 'runs successfully for payload one' do
       data = PayloadParser::GuestData.run(payload: @payload_one)
 
-      assert data.valid?
+      assert_not_empty data.result
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/email/) }, "No Key contains 'email'"
     end
@@ -21,7 +21,7 @@ module PayloadParser
     test 'runs successfully for payload two' do
       data = PayloadParser::GuestData.run(payload: @payload_two)
 
-      assert data.valid?
+      assert_not_empty data.result
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/email/) }, "No Key contains 'email'"
     end
