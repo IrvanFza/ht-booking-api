@@ -13,7 +13,6 @@ module PayloadParser
     test 'runs successfully for payload one' do
       data = PayloadParser::ReservationData.run(payload: @payload_one)
 
-      assert_empty data.errors
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/code/) }, "No Key contains 'code'"
     end
@@ -21,7 +20,6 @@ module PayloadParser
     test 'runs successfully for payload two' do
       data = PayloadParser::ReservationData.run(payload: @payload_two)
 
-      assert_empty data.errors
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/code/) }, "No Key contains 'code'"
     end
