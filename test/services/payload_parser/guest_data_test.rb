@@ -10,7 +10,7 @@ module PayloadParser
     test 'runs successfully for payload one' do
       data = PayloadParser::GuestData.run(payload: @payload_one)
 
-      puts data.errors
+      puts data.errors.full_messages.to_sentence
 
       assert data.valid?
       assert_equal Hash, data.result.class
