@@ -3,6 +3,8 @@ This project is a simple Ruby on Rails application that demonstrates a scalable 
 
 For simplicity purpose when setting and running the project, this project uses all default configurations including SQLite as the database and minitest as the testing framework.
 
+To foster a culture of 'continuous integration' and 'automated testing', we have setup GitHub Actions to automatically run tests whenever a push or pull request is made.
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -38,13 +40,16 @@ These instructions will get you a copy of the project up and running on your loc
   rails server
   ```
 
-Visit `http://localhost:3000/` from your browser.
-
 ## Running the Tests
 The system comes with a suite of tests that ensure code quality and application's behavior. Run the following command in your terminal to execute all the tests:
 ```
 rails test
 ```
+
+## Automated Tests with GitHub Actions
+The project is configured with GitHub Actions to automatically run the test suite on every push or pull request event.
+This helps us maintain code quality and detect any breaking changes early in the development lifecycle.
+You can view the results of these tests in the Actions tab of the project's GitHub page.
 
 ## API Authentication
 The API uses a simple authentication mechanism to ensure that only authorized users can access the API. The API expects a `API-Key` header to be present in the request.
