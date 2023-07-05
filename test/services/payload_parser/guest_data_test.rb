@@ -3,14 +3,12 @@ require "test_helper"
 module PayloadParser
   class GuestDataTest < ActiveSupport::TestCase
     def setup
-      @payload_one = file_data('payload_one.json')
-      @payload_two = file_data('payload_two.json')
+      @payload_two = JSON.parse(file_data('payload_two.json'))
+      @payload_one = JSON.parse(file_data('payload_one.json'))
     end
 
     test 'runs successfully for payload one' do
       data = PayloadParser::GuestData.run(payload: @payload_one)
-
-      puts data.errors.full_messages.to_sentence
 
       assert data.valid?
       assert_equal Hash, data.result.class
