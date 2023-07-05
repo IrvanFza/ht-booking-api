@@ -5,6 +5,14 @@ For simplicity purpose when setting and running the project, this project uses a
 
 To foster a culture of 'continuous integration' and 'automated testing', we have setup GitHub Actions to automatically run tests whenever a push or pull request is made.
 
+## Table of contents
+1. [Getting Started](#getting-started)
+2. [Running the Tests](#running-the-tests)
+3. [Automated Tests with GitHub Actions](#automated-tests-with-github-actions)
+4. [API Authentication](#api-authentication)
+5. [API Usage](#api-usage)
+6. [License](#license)
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
