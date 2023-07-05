@@ -1,0 +1,66 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: "RES123"
+  guest: one
+  start_date: <%= Date.today %>
+  end_date: <%= 5.days.from_now %>
+  night_count: 5
+  guest_count: 2
+  adult_count: 2
+  currency: "USD"
+  sub_total_price: 500
+  total_price: 500
+  status: "Pending"
+
+two:
+  code: "RES234"
+  guest: two
+  start_date: <%= 2.days.ago %>
+  end_date: <%= 3.days.from_now %>
+  night_count: 6
+  guest_count: 3
+  adult_count: 2
+  currency: "IDR"
+  sub_total_price: 7000000
+  total_price: 7005000
+  status: "Accepted"
+
+three:
+  code: "RES345"
+  guest: three
+  start_date: <%= Date.today %>
+  end_date: <%= 10.days.from_now %>
+  night_count: 10
+  guest_count: 4
+  adult_count: 2
+  currency: "Dollars"
+  sub_total_price: 1000
+  total_price: 1050
+  status: "Failed"
+
+four:
+  code: "RES456"
+  guest: one
+  start_date: <%= 1.day.ago %>
+  end_date: <%= 4.days.from_now %>
+  night_count: 5
+  guest_count: 2
+  adult_count: 1
+  currency: "Rupiah"
+  sub_total_price: 5000000
+  total_price: 5050000
+  status: "Accepted"
+
+five:
+  code: "RES567"
+  guest: two
+  start_date: <%= Date.today %>
+  end_date: <%= 7.days.from_now %>
+  night_count: 7
+  guest_count: 3
+  adult_count: 2
+  currency: "USD"
+  sub_total_price: 700
+  total_price: 750
+  status: "Pending"
