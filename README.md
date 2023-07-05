@@ -62,11 +62,8 @@ rails credentials:show
 That command will require you to enter the master key. Please contact the project owner to get the master key.
 
 ## API Usage
-The API provides two primary endpoints for managing reservations.
-
-### Create Reservation
-
-* Endpoint: `/api/v1/reservations`
+The API provides one primary endpoint to create and update the booking data:
+* Endpoint: `/api/v1/bookings`
 * Method: `POST`
 * Example Payloads:
 
@@ -125,33 +122,6 @@ The API provides two primary endpoints for managing reservations.
     }
   }
   ```
-
-### Update Reservation
-The API also offers an endpoint to accept changes to a reservation. Here it is:
-* Endpoint: `/api/v1/reservations/:reservation_code`
-* Method: `PUT`
-* Payload Accepted:
-  A sample payload to update a reservation might look like this:
-
-  ```
-  {
-    "reservation_code": "YYY12345678",
-    "start_date": "2021-04-16",
-    "end_date": "2021-04-20",
-    "nights": 5,
-    "guests": 5,
-    "status": "changed",
-    "guest": {
-      "phone": "639123456789",
-      "email": "wayne_woodbridge@bnb.com"
-    },
-    "currency": "AUD",
-    "payout_price": "4500.00",
-    "security_price": "550",
-    "total_price": "5000.00"
-  }
-  ```
-Ensure that your request includes the `reservation_code` of the reservation you're looking to update. You only need to include the fields that you want to update in the payload.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
