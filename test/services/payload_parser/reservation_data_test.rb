@@ -3,13 +3,14 @@ require "test_helper"
 module PayloadParser
   class ReservationDataTest < ActiveSupport::TestCase
     def setup
-      @payload_one = payload_one
-      @payload_two = payload_two
+      @payload_one = file_data('payload_one.json')
+      @payload_two = file_data('payload_two.json')
     end
 
     test 'runs successfully for payload one' do
       data = PayloadParser::ReservationData.run(payload: @payload_one)
 
+      assert data.valid?
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/code/) }, "No Key contains 'code'"
     end
@@ -17,6 +18,7 @@ module PayloadParser
     test 'runs successfully for payload two' do
       data = PayloadParser::ReservationData.run(payload: @payload_two)
 
+      assert data.valid?
       assert_equal Hash, data.result.class
       assert data.result.keys.any? { |key| key.match(/code/) }, "No Key contains 'code'"
     end

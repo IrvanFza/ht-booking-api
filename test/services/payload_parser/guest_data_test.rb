@@ -3,8 +3,8 @@ require "test_helper"
 module PayloadParser
   class GuestDataTest < ActiveSupport::TestCase
     def setup
-      @payload_one = payload_one
-      @payload_two = payload_two
+      @payload_one = file_data('payload_one.json')
+      @payload_two = file_data('payload_two.json')
     end
 
     test 'runs successfully for payload one' do
