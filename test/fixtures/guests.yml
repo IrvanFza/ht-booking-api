@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: 'John'
+  last_name: 'Doe'
+  email: 'john.doe@example.com'
+  phone_number: '+1234567890'
+
+two:
+  first_name: 'James'
+  last_name: 'Smith'
+  email: 'james.smith@example.com'
+
+three:
+  first_name: 'Jack'
+  email: 'jack@example.com'
