@@ -1,12 +1,12 @@
 require "test_helper"
 
 module PayloadParser
-  class ReservationDataTest < ActionDispatch::IntegrationTest
+  class ReservationDataTest < ActiveSupport::TestCase
     def setup
-      payload_one = File.read(Rails.root.join('test', 'fixtures', 'files', 'payload_one.json'))
+      payload_one = file_data('payload_one.json')
       @payload_one = JSON.parse(payload_one).with_indifferent_access
 
-      payload_two = File.read(Rails.root.join('test', 'fixtures', 'files', 'payload_two.json'))
+      payload_two = file_data('payload_two.json')
       @payload_two = JSON.parse(payload_two).with_indifferent_access
     end
 
