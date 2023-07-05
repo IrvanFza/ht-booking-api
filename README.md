@@ -1,4 +1,4 @@
-# HT Reservation API
+# HT Booking API
 This project is a simple Ruby on Rails application that demonstrates a scalable approach to parsing and saving multiple payloads.
 
 For simplicity purpose when setting and running the project, this project uses all default configurations including SQLite as the database and minitest as the testing framework.
@@ -15,11 +15,11 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 * Clone this repository to your local machine using:
   ```
-  git clone https://github.com/IrvanFza/ht-reservation-api.git
+  git clone https://github.com/IrvanFza/ht-booking-api.git
   ```
 * Go to project directory:
   ```
-  cd ht-reservation-api
+  cd ht-booking-api
   ```
 * Install all dependencies:
   ```
