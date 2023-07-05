@@ -8,6 +8,8 @@ module PayloadParser
 
       payload_two = file_data('payload_two.json')
       @payload_two = JSON.parse(payload_two).with_indifferent_access
+
+      puts system "test -f #{Rails.root.to_s + '/test/fixtures/files/payload_one.json'} && echo 'File exists' || echo 'File does not exist'"
     end
 
     test 'runs successfully for payload one' do
